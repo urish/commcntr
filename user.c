@@ -295,7 +295,7 @@ USERCMD_FUNC(cmd_nick) {
 	assert(client->name);
     } else {
 	send_client(client, "USER %s", newnick);
-	send_all(client, "JOIN %s", newnick, args);
+	send_all(client, "JOIN %s", newnick);
 	client->name = (char*)strdup(newnick);
 	assert(client->name);
     }
