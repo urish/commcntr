@@ -1,0 +1,11 @@
+High Priority:
+- nothing currently
+
+Low Priority:
+- nothing currently
+
+Considered Suggestions:
+- support for 'groups' where several users can establish a group, message to
+  their group, etc.
+- better user-list structures (hash table or a binary tree).
+- Virtual user support (will allow server-linking).

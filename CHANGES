@@ -1,0 +1,49 @@
+v2.04:
+    -> Server can recive partial commands (e.g. 'G' instead of 'GLOBAL').
+
+v2.03:
+    -> Fixed a bug in the output system caused a server freeze when writing to
+       a client which has its output buffer full (non-blocking I/O).
+
+v2.02:
+    -> Completly rewrote the I/O system to a use a BUFSIZed buffer. Should fix
+       all the bugs with multi-line/partial-line packets.
+       
+v2.01:
+    -> Fixed a bug with mutli-line packets
+
+v2.01b9:
+    -> Server now ignores SIGPIPE, instead of terminating.
+    -> Little code changes/improvements.
+
+v2.01b8:
+    -> Added command line arguments to set the admin pasword, fork, quiet mode,
+       and also to show help and server version.
+    -> Removed the usage of setlinebuf which is non-portable to BSD < 4.2.
+       setvbuf is used instead.
+
+v2.01b7:
+    -> Added 'QUIET' option to config.h.
+    -> Added security options to config.h.
+    -> Client I/O is now managed by stdio.h's buffering system.
+    -> Some I/O bugs with multi-line/part of line packets were fixed.
+
+v2.01b4 (by amir <amir@boom.org.il>):
+    -> added DIE / RESTART / KILL commands, for admins only.
+    -> help system now supports admin commands.
+    -> better support for admin commands.
+    -> server uptime added to SINFO command.
+    -> now server handles signals
+
+v2.01b2:
+    -> fixed some nasty bug in cmd_client2client code
+    -> now getsockbyip returns you the full ipv6 addr, not just part of it.
+
+v2.01b:
+    -> Added ipv6 support
+    -> a complete rewrite of server.c
+    -> added DO_FORK option
+    -> added ADMIN command
+    -> added FLAGS propery to client structure.
+    -> minor changes to fork() code.
+    -> help system recoded.
