@@ -101,7 +101,7 @@ void init_server (int port) {
     server_sock6 = socket(PF_INET6, SOCK_STREAM, 0);
     check_error(server_sock6, "ipv6: socket");
     rc = 1;
-    rc = setsockopt(server_sock, SOL_SOCKET, SO_REUSEADDR, (void*)&rc, sizeof(rc));
+    rc = setsockopt(server_sock6, SOL_SOCKET, SO_REUSEADDR, (void*)&rc, sizeof(rc));
     check_error(rc, "ipv6: setsockopt");
     saddr6.sin6_family = AF_INET6;
     saddr6.sin6_port = htons(port);
